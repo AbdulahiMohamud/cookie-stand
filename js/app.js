@@ -1,7 +1,7 @@
 'use strict';
 
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
-let storeSection = document.getElementById('Stores-cookies');
+let storeForm = document.getElementById('store-form');
 let table = document.getElementById('table');
 function randomCustomer (min, max) {
   //  pulled from mozilla
@@ -51,19 +51,27 @@ function grandpopTotal() {
   let row = document.createElement('tr');
   let grandTotal = document.createElement('th');
   grandTotal.innerText = 'Total';
+  table.appendChild(row);
   row.appendChild(grandTotal);
+
+  let allTotal = 0;
 
   for(let i = 0; i < openHours.length; i++) {
     let amount = 0;
 
-    for (let j = 0; j < this.cookieHours.length; j++ ) {
-      amount += this.cookieHours[i][j];
+    for (let j = 0; j < displayCookiesArr.length; j++ ) {
+      amount += displayCookiesArr[j].cookieHours[i];
+      allTotal += displayCookiesArr[j].cookieHours[i];
 
-      let dailyTotal = document.createElement('td');
-      dailyTotal.innerText = amount;
-      row.appendChild(dailyTotal);
     }
+    let dailyTotal = document.createElement('td');
+    dailyTotal.innerText = amount;
+    row.appendChild(dailyTotal);
+
   }
+  let totalofTotal = document.createElement('td');
+  totalofTotal.innerText = allTotal;
+  row.appendChild(totalofTotal);
 } 
 
 
@@ -100,6 +108,31 @@ function displayCookies(){
     displayCookiesArr[i].render();
   }
 }
+
+function handleSubmit (event) {
+  event.preventDefault();
+
+  let name = event.target.Name.value;
+  let min = ~~event.target.minimum.value;
+  let max = ~~event.target.maximum.value;
+  let avg = ~~event.target.average.value;
+
+  let newStore = new cookies(name,min,max,avg);
+  newStore.getCookies();
+  newStore.render();
+
+
+  let el = document.getElementById('table');
+  // pulled from stackover flow
+  el.removeChild(el.childNodes[el.childElementCount] );
+  render(newStore);
+  grandpopTotal();
+  storeForm.reset();
+}
+
+
+storeForm.addEventListener('submit',handleSubmit);
+
 
 displayTop();
 displayCookies();
