@@ -118,14 +118,14 @@ function handleSubmit (event) {
   let avg = ~~event.target.average.value;
 
   let newStore = new cookies(name,min,max,avg);
+  
+  
+  let el = document.getElementById('table').lastChild;
+  table.removeChild(el);
+  // pulled from stackover flow
+
   newStore.getCookies();
   newStore.render();
-
-
-  let el = document.getElementById('table');
-  // pulled from stackover flow
-  el.removeChild(el.childNodes[el.childElementCount] );
-  render(newStore);
   grandpopTotal();
   storeForm.reset();
 }

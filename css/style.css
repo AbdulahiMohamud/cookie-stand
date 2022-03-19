@@ -1,11 +1,45 @@
+* {
+  background-color: darkslategray;
+  font-size: 2em;
+}
+
+
 table, tr, th, td {
   border: 2px solid black;
   padding: 5px;
+  background-color: coral;
+  color:steelblue;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Helvetica', sans-serif;
+ 
+}
+
+th {
+  color: blue;
+}
+
+#salesh1 {
+  margin-bottom: 20px;
+}
+
+fieldset {
+  color: coral;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+  padding: auto;
 }
 
 
 body {
   align-content:center ;
+}
+h1 {
+  color: darksalmon;
+  font-size: 2em;
+  font-family: 'Fredoka', sans-serif;
 }
 header {
 background-color: gray;
@@ -21,37 +55,66 @@ nav {
 }
 
 nav p {
-  font-size: 16px;
+  font-size: 2em;
   vertical-align: top;
   text-align: top;
   margin-top: 50px;
   margin-left: 69px;
+  font-family: 'Fredoka', sans-serif;
+  font-family: 'Hurricane', cursive;
 }
 
 main img {
   margin-top: 20px;
 }
+h3 {
+  color: darksalmon;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+main p {
+  color:aliceblue;
+}
 
-ul {
+h4{
+  color: darksalmon;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+ul{
+  font-size: medium;
+  list-style: circle;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items:flex-start;
+
+}
+li {
+  color:aliceblue;
+  width: max-content;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 article{
   border: 0px;
   margin-top: 10px;
 
 }
+article h2 { 
+  color: darksalmon;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 article  p {
-  /* pulled from stackoverflow */
-  margin-top: 0px;
-  height: 160px;
-  font-size: 20px;
-  font-style: italic;
-  margin-left:  500px;
-  margin-right:228px ;
-  display: inline-block;
+  color:aliceblue;
+  text-align: center;
+ 
 }
 article h1 h2 h3 {
   font-size: 16pt;
@@ -61,6 +124,9 @@ article h1 h2 h3 {
 
 
 footer {
-  height: 100px;
-  background-color: gray;
+  margin-top: 5%;
+  background-color: brown;
+  font-size: 20px;
+  margin-bottom: ;
+ 
 }
